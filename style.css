@@ -2,7 +2,7 @@
 :root {
   --bg-color: #f0f0f0;
   --text-color: #000;
-  --link-color: #0000ff;
+  --link-color: #00f;
   --link-visited: #800080;
   --border-color: #999;
   --header-bg: #e0e0e0;
@@ -327,7 +327,7 @@ img {
 .footer-content {
   padding: 1rem;
   border-top: 1px solid #333;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgb(0 0 0 / 20%);
 }
 
 .contact-shortcuts {
