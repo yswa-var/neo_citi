@@ -79,11 +79,16 @@
   </div>
 
   <script>
+    // Get the base path for GitHub Pages
+    const basePath = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+      ? '' 
+      : '/neo_citi';  // Replace with your repository name
+
     // Function to load content from a directory
     async function loadContent(type) {
       const container = document.getElementById(`${type}-container`);
       try {
-        const response = await fetch(`/${type}/index.json`);
+        const response = await fetch(`${basePath}/${type}/index.json`);
         const data = await response.json();
         
         container.innerHTML = ''; // Clear loading message
@@ -98,7 +103,7 @@
             </div>
             <p class="tech-stack">${item.date || ''}</p>
             <p>${item.description}</p>
-            <a href="/${type}/${item.filename}" class="nav-link">[Read More]</a>
+            <a href="${basePath}/${type}/${item.filename}" class="nav-link">[Read More]</a>
           `;
           container.appendChild(card);
         });
