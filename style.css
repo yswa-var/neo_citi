@@ -1,0 +1,209 @@
+/* Retro Anime Style CSS */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+:root {
+  --neon-pink: #ff2a6d;
+  --neon-blue: #05d9e8;
+  --neon-purple: #d300c5;
+  --dark-bg: #0a0a0f;
+  --grid-color: rgba(5, 217, 232, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: #fff;
+  font-family: 'VT323', monospace;
+  line-height: 1.6;
+  background-image: 
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 20px 20px;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.site-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2.5rem;
+  color: var(--neon-pink);
+  text-shadow: 
+    0 0 5px var(--neon-pink),
+    0 0 10px var(--neon-pink),
+    0 0 20px var(--neon-pink);
+  margin-bottom: 1rem;
+  animation: glitch 2s infinite;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.nav-link {
+  color: var(--neon-blue);
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--neon-blue);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.nav-link:hover {
+  background: var(--neon-blue);
+  color: var(--dark-bg);
+  box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.content-section {
+  background: rgba(10, 10, 15, 0.8);
+  border: 2px solid var(--neon-purple);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 15px rgba(211, 0, 197, 0.3);
+}
+
+.section-title {
+  color: var(--neon-purple);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 5px var(--neon-purple);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: rgba(5, 217, 232, 0.1);
+  border: 1px solid var(--neon-blue);
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px var(--neon-blue);
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 
+      0.05em 0 0 var(--neon-pink),
+      -0.05em -0.025em 0 var(--neon-blue),
+      -0.025em 0.05em 0 var(--neon-purple);
+  }
+  14% {
+    text-shadow: 
+      0.05em 0 0 var(--neon-pink),
+      -0.05em -0.025em 0 var(--neon-blue),
+      -0.025em 0.05em 0 var(--neon-purple);
+  }
+  15% {
+    text-shadow: 
+      -0.05em -0.025em 0 var(--neon-pink),
+      0.025em 0.025em 0 var(--neon-blue),
+      -0.05em -0.05em 0 var(--neon-purple);
+  }
+  49% {
+    text-shadow: 
+      -0.05em -0.025em 0 var(--neon-pink),
+      0.025em 0.025em 0 var(--neon-blue),
+      -0.05em -0.05em 0 var(--neon-purple);
+  }
+  50% {
+    text-shadow: 
+      0.025em 0.05em 0 var(--neon-pink),
+      0.05em 0 0 var(--neon-blue),
+      0 -0.05em 0 var(--neon-purple);
+  }
+  99% {
+    text-shadow: 
+      0.025em 0.05em 0 var(--neon-pink),
+      0.05em 0 0 var(--neon-blue),
+      0 -0.05em 0 var(--neon-purple);
+  }
+  100% {
+    text-shadow: 
+      -0.025em 0 0 var(--neon-pink),
+      -0.025em -0.025em 0 var(--neon-blue),
+      -0.025em -0.05em 0 var(--neon-purple);
+  }
+}
+
+/* CRT screen effect */
+.crt::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .site-title {
+    font-size: 1.8rem;
+  }
+  
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+} 
