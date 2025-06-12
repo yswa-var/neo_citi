@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects - Yashaswa Varshney</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="window-controls">
+        <span class="window-title">TERMINAL v1.0.0</span>
+        <div class="window-buttons">
+          <span class="minimize">_</span>
+          <span class="maximize">□</span>
+          <span class="close">×</span>
+        </div>
+      </div>
+      <div class="terminal-header">
+        <span class="prompt">$</span> <span class="command">./projects.sh</span>
+      </div>
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">[HOME]</a>
+        <a href="about.html" class="nav-link">[ABOUT]</a>
+        <a href="blogs.html" class="nav-link">[BLOGS]</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="content-section">
+        <h2 class="section-title">> PROJECT_FILES</h2>
+        <div id="projects-container" class="project-grid">
+          <!-- Projects will be loaded dynamically -->
+          <div class="loading">> LOADING_PROJECTS...</div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>> SYSTEM: Yashaswa Varshney Terminal v1.0.0 | STATUS: ONLINE</p>
+    </footer>
+  </div>
+
+  <script>
+    // Get the base path for GitHub Pages
+    const basePath = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+      ? '' 
+      : '/neo_citi';  // Replace with your repository name
+
+    // Function to load projects
+    async function loadProjects() {
+      const container = document.getElementById('projects-container');
+      try {
+        const response = await fetch(`${basePath}/projects/index.json`);
+        const data = await response.json();
+        
+        container.innerHTML = ''; // Clear loading message
+        
+        data.forEach(item => {
+          const card = document.createElement('article');
+          card.className = 'project-card';
+          card.innerHTML = `
+            <div class="card-header">
+              <h3>> ${item.title.toUpperCase()}</h3>
+              <span class="card-icon">[${item.icon || '📄'}]</span>
+            </div>
+            <p class="tech-stack">> DATE: ${item.date || 'N/A'}</p>
+            <p>> ${item.description}</p>
+            <a href="${basePath}/projects/${item.filename}" class="nav-link">[READ_MORE]</a>
+          `;
+          container.appendChild(card);
+        });
+      } catch (error) {
+        container.innerHTML = `<div class="error">> ERROR: Failed to load PROJECTS. Please try again later.</div>`;
+        console.error('Error loading projects:', error);
+      }
+    }
+
+    // Load projects when the page loads
+    document.addEventListener('DOMContentLoaded', loadProjects);
+  </script>
+</body>
+</html> 

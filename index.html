@@ -3,122 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yashaswa Varshney - Digital Portfolio</title>
+  <title>Yashaswa Varshney - Terminal Portfolio</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   <link href="style.css" rel="stylesheet" type="text/css" media="all" />
 </head>
-<body class="crt">
+<body>
   <div class="container">
     <header>
       <div class="window-controls">
-        <span class="window-title">YASHASWA.exe</span>
+        <span class="window-title">TERMINAL v1.0.0</span>
         <div class="window-buttons">
           <span class="minimize">_</span>
           <span class="maximize">□</span>
           <span class="close">×</span>
         </div>
       </div>
+      <div class="terminal-header">
+        <span class="prompt">$</span> <span class="command">./portfolio.sh</span>
+      </div>
       <nav class="nav-menu">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#blogs" class="nav-link">Blogs</a>
-        <a href="#projects" class="nav-link">Projects</a>
+        <a href="about.html" class="nav-link">[ABOUT]</a>
+        <a href="blogs.html" class="nav-link">[BLOGS]</a>
+        <a href="projects.html" class="nav-link">[PROJECTS]</a>
       </nav>
     </header>
 
     <main>
-      <section id="about" class="content-section">
-        <h2 class="section-title" data-text="Digital Profile">Digital Profile</h2>
+      <section class="content-section">
+        <h2 class="section-title">> WELCOME_TO_TERMINAL</h2>
         <div class="project-grid">
           <article class="project-card">
             <div class="card-header">
-              <h3>About Me</h3>
-              <span class="card-icon">👨‍💻</span>
+              <h3>> NAVIGATION</h3>
+              <span class="card-icon">[🧭]</span>
             </div>
-            <p>Software Engineer passionate about AI, Finance, and Building Digital Systems</p>
-            <p>B.Tech in Computer Science Engineering from KIIT University</p>
+            <p class="tech-stack">> AVAILABLE_COMMANDS</p>
+            <p>> Use the navigation menu above to explore different sections:</p>
+            <ul>
+              <li><a href="about.html" class="nav-link">[ABOUT]</a> - View my profile and contact information</li>
+              <li><a href="blogs.html" class="nav-link">[BLOGS]</a> - Read my latest blog posts</li>
+              <li><a href="projects.html" class="nav-link">[PROJECTS]</a> - Explore my projects and work</li>
+            </ul>
           </article>
           <article class="project-card">
             <div class="card-header">
-              <h3>Skills</h3>
-              <span class="card-icon">🛠️</span>
+              <h3>> QUICK_START</h3>
+              <span class="card-icon">[⚡]</span>
             </div>
-            <p>Python • Golang • SQL • REST API • PyTorch • LangGraph • LangChain • RAG • Vector DBs • MCP</p>
+            <p class="tech-stack">> GETTING_STARTED</p>
+            <p>> Start by exploring my profile in the About section, or jump directly to my latest work in Projects.</p>
+            <p>> All content is dynamically loaded and updated regularly.</p>
           </article>
-          <article class="project-card">
-            <div class="card-header">
-              <h3>Connect</h3>
-              <span class="card-icon">📧</span>
-            </div>
-            <p>Email: yswa.var@icloud.com</p>
-            <p>LinkedIn: linkedin.com/in/yashaswa-varshney</p>
-            <p>GitHub: github.com/yswa-var</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="blogs" class="content-section">
-        <h2 class="section-title" data-text="Digital Thoughts">Digital Thoughts</h2>
-        <div id="blogs-container" class="project-grid">
-          <!-- Blogs will be loaded dynamically -->
-          <div class="loading">Loading blogs...</div>
-        </div>
-      </section>
-
-      <section id="projects" class="content-section">
-        <h2 class="section-title" data-text="Digital Creations">Digital Creations</h2>
-        <div id="projects-container" class="project-grid">
-          <!-- Projects will be loaded dynamically -->
-          <div class="loading">Loading projects...</div>
         </div>
       </section>
     </main>
 
     <footer>
-      <p>© 2024 Yashaswa Varshney | Built with Windows 95 vibes and vaporwave aesthetics</p>
+      <p>> SYSTEM: Yashaswa Varshney Terminal v1.0.0 | STATUS: ONLINE</p>
     </footer>
   </div>
-
-  <script>
-    // Get the base path for GitHub Pages
-    const basePath = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
-      ? '' 
-      : '/neo_citi';  // Replace with your repository name
-
-    // Function to load content from a directory
-    async function loadContent(type) {
-      const container = document.getElementById(`${type}-container`);
-      try {
-        const response = await fetch(`${basePath}/${type}/index.json`);
-        const data = await response.json();
-        
-        container.innerHTML = ''; // Clear loading message
-        
-        data.forEach(item => {
-          const card = document.createElement('article');
-          card.className = 'project-card';
-          card.innerHTML = `
-            <div class="card-header">
-              <h3>${item.title}</h3>
-              <span class="card-icon">${item.icon || '📄'}</span>
-            </div>
-            <p class="tech-stack">${item.date || ''}</p>
-            <p>${item.description}</p>
-            <a href="${basePath}/${type}/${item.filename}" class="nav-link">[Read More]</a>
-          `;
-          container.appendChild(card);
-        });
-      } catch (error) {
-        container.innerHTML = `<div class="error">Failed to load ${type}. Please try again later.</div>`;
-        console.error(`Error loading ${type}:`, error);
-      }
-    }
-
-    // Load content when the page loads
-    document.addEventListener('DOMContentLoaded', () => {
-      loadContent('blogs');
-      loadContent('projects');
-    });
-  </script>
 </body>
 </html>
 
