@@ -22,5 +22,12 @@
     "icon": "🎨",
     "filename": "filthyfilter.html",
     "tech_stack": "OpenCV • Tesseract OCR • Computer Vision"
+  },
+  {
+    "title": "Neo Citi",
+    "icon": "🌆",
+    "date": "2024",
+    "description": "A modern portfolio website with Windows XP aesthetics and vaporwave vibes.",
+    "filename": "neo-citi.html"
   }
 ] 

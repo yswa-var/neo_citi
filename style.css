@@ -1,6 +1,4 @@
 /* Windows XP Style CSS */
-@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap');
-
 :root {
   --xp-blue: #245edc;
   --xp-light-blue: #7ba7d9;
@@ -25,7 +23,7 @@
 body {
   background: #3a6ea5 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABdJREFUeNpi+P//fwMTAwMDEwMDAwMAEAYAASYGBgYAAAAASUVORK5CYII=');
   color: var(--xp-text);
-  font-family: 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.6;
   min-height: 100vh;
   position: relative;
@@ -51,7 +49,7 @@ header {
 }
 
 .site-title {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 1.5rem;
   color: #fff;
   text-align: center;
@@ -70,7 +68,7 @@ header {
 .nav-link {
   color: var(--xp-text);
   text-decoration: none;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-weight: 600;
   padding: 6px 12px;
   background: var(--xp-button);
@@ -94,7 +92,7 @@ header {
 }
 
 .section-title {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 1.2rem;
   color: var(--xp-blue);
   margin-bottom: 1rem;
@@ -132,14 +130,14 @@ header {
 
 .card-header h3 {
   color: var(--xp-blue);
-  font-family: 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-weight: 600;
   font-size: 1.1rem;
   margin: 0;
 }
 
 .tech-stack {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 0.9rem;
   color: var(--xp-text);
   margin-bottom: 0.5rem;
@@ -174,7 +172,7 @@ header {
 
 .window-title {
   color: white;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-weight: 600;
   font-size: 0.9rem;
 }
@@ -193,7 +191,7 @@ header {
   background: var(--xp-button);
   border: 1px solid var(--xp-border);
   border-radius: 3px;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 0.8rem;
   cursor: pointer;
   user-select: none;
@@ -214,7 +212,7 @@ footer {
   padding: 8px;
   text-align: center;
   border-top: 1px solid var(--xp-border);
-  font-family: 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: var(--xp-text);
   border-radius: 0 0 8px 8px;
 }
@@ -250,7 +248,7 @@ footer {
   text-align: center;
   padding: 2rem;
   color: var(--xp-blue);
-  font-family: 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 1.2rem;
 }
 
@@ -258,7 +256,7 @@ footer {
   text-align: center;
   padding: 2rem;
   color: #e81123;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 1.2rem;
   border: 1px solid #e81123;
   background: rgb(232 17 35 / 10%);

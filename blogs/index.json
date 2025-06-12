@@ -1,9 +1,9 @@
 [
   {
-    "title": "Nadaraya-Watson Indicator",
-    "description": "Backtesting the viral Nadaraya-Watson envelop trading indicator in Python",
+    "title": "Building Neo Citi",
+    "icon": "🏗️",
     "date": "March 2024",
-    "icon": "📊",
-    "filename": "nw-indicator.html"
+    "description": "A journey into creating a retro-futuristic portfolio website with modern web technologies.",
+    "filename": "building-neo-citi.html"
   }
 ] 
