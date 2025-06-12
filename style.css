@@ -1,15 +1,15 @@
 /* Terminal Style CSS */
 :root {
-  --terminal-bg: #000000;
-  --terminal-text: #00ff00;
-  --terminal-text-dim: #00cc00;
-  --terminal-border: #00ff00;
-  --terminal-header: #001100;
-  --terminal-button: #003300;
-  --terminal-button-hover: #006600;
-  --terminal-button-text: #00ff00;
-  --terminal-shadow: rgba(0, 255, 0, 0.2);
-  --terminal-cursor: #00ff00;
+  --terminal-bg: #000;
+  --terminal-text: #0f0;
+  --terminal-text-dim: #0c0;
+  --terminal-border: #0f0;
+  --terminal-header: #010;
+  --terminal-button: #030;
+  --terminal-button-hover: #060;
+  --terminal-button-text: #0f0;
+  --terminal-shadow: rgb(0 255 0 / 20%);
+  --terminal-cursor: #0f0;
 }
 
 * {
@@ -44,8 +44,8 @@ body::before {
   height: 100%;
   background: repeating-linear-gradient(
     0deg,
-    rgba(0, 0, 0, 0.15),
-    rgba(0, 0, 0, 0.15) 1px,
+    rgb(0 0 0 / 15%),
+    rgb(0 0 0 / 15%) 1px,
     transparent 1px,
     transparent 2px
   );
@@ -64,7 +64,7 @@ body::after {
   background: linear-gradient(
     to bottom,
     transparent 50%,
-    rgba(0, 0, 0, 0.1) 50%
+    rgb(0 0 0 / 10%) 50%
   );
   background-size: 100% 4px;
   pointer-events: none;
@@ -118,6 +118,7 @@ header {
   border: 1px solid var(--terminal-border);
   transition: all 0.2s;
   text-transform: uppercase;
+  position: relative;
 }
 
 .nav-link:hover {
@@ -260,7 +261,7 @@ header {
 }
 
 .window-buttons .close:hover {
-  background: #330000;
+  background: #300;
   color: var(--terminal-text);
 }
 
@@ -309,9 +310,9 @@ footer {
 .error {
   text-align: center;
   padding: 2rem;
-  color: #ff0000;
+  color: #f00;
   font-family: 'VT323', 'Courier New', monospace;
-  border: 1px solid #ff0000;
+  border: 1px solid #f00;
 }
 
 /* Responsive design */
@@ -334,11 +335,17 @@ footer {
 }
 
 /* Terminal cursor effect for interactive elements */
-a, button, .nav-link {
+a, button {
   position: relative;
 }
 
-a:hover::after, button:hover::after, .nav-link:hover::after {
+a:hover::after, button:hover::after {
+  content: '_';
+  position: absolute;
+  animation: blink 1s infinite;
+}
+
+.nav-link:hover::after {
   content: '_';
   position: absolute;
   animation: blink 1s infinite;
