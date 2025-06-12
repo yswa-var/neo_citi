@@ -1,0 +1,26 @@
+[
+  {
+    "title": "LocoForge",
+    "description": "Multi-Database Query Orchestrator with natural language interface",
+    "date": "2024",
+    "icon": "🔮",
+    "filename": "locoforge.html",
+    "tech_stack": "LangGraph • MCP • SQL • MongoDB"
+  },
+  {
+    "title": "RRG",
+    "description": "Open-source Bloomberg RRG clone for sector performance visualization",
+    "date": "2024",
+    "icon": "📊",
+    "filename": "rrg.html",
+    "tech_stack": "Python • Yahoo Finance API • Plotly"
+  },
+  {
+    "title": "FilthyFilter",
+    "description": "AI-powered anime wallpaper extractor with multi-metric analysis",
+    "date": "2023",
+    "icon": "🎨",
+    "filename": "filthyfilter.html",
+    "tech_stack": "OpenCV • Tesseract OCR • Computer Vision"
+  }
+] 

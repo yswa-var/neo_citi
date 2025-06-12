@@ -1,0 +1,9 @@
+[
+  {
+    "title": "Nadaraya-Watson Indicator",
+    "description": "Backtesting the viral Nadaraya-Watson envelop trading indicator in Python",
+    "date": "March 2024",
+    "icon": "📊",
+    "filename": "nw-indicator.html"
+  }
+] 

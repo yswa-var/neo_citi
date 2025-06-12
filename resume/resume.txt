@@ -1,0 +1,143 @@
+\documentclass[10pt]{resume}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\geometry{left=0.3in, right=0.3in, top=0.2in, bottom=0.2in}
+
+% Reduce itemize spacing globally
+\setlist[itemize]{noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt}
+
+\begin{document}
+
+\introduction[
+    fullname={Yashaswa Varshney},
+    email={yswa.var@icloud.com},
+    phone={+91 6396300355},
+    linkedin={linkedin.com/in/yashaswa-varshney},
+    github={github.com/yswa-var},
+]
+
+\begin{experienceSection}{Experience}
+
+    \experienceItem[
+        company={HyperBots},
+        location={Bengaluru, IN},
+        position={Software Development Engineer},
+        duration={Aug 2024 – Present}
+    ]
+    \begin{itemize}
+        \item Developed ERP connectors for AI-driven accounts payable workflows, improving data exchange.
+        \item Implemented real-time notifications (email, WhatsApp, web), reducing turnaround time.
+    \end{itemize}
+
+    \experienceItem[
+        company={Finzome},
+        location={Mumbai, IN},
+        position={Software Developer Intern},
+        duration={Jun 2024 – Aug 2024}
+    ]
+    \begin{itemize}
+        \item Built a backtesting framework for stocks; reduced runtime using Cython.
+        \item Optimized trading strategies via parameter tuning.
+        \item Designed backend and integrated payments for LMS (90\%+ success rate).
+    \end{itemize}
+
+    \experienceItem[
+        company={AR Quants},
+        location={Mumbai, IN},
+        position={Software Developer Intern},
+        duration={Feb 2023 – Aug 2023}
+    ]
+    \begin{itemize}
+        \item Built statistical tools for transaction analysis.
+        \item Designed InfluxDB-based HFT storage (99.9\% uptime).
+        \item Created custom Pine Script indicators for market pattern visualization.
+    \end{itemize}
+
+\end{experienceSection}
+
+\begin{experienceSection}{Projects}
+
+    \projectItem[
+        title={Multi-Database Query Orchestrator},
+        duration={\href{https://github.com/yswa-var/LocoForge}{[LINK]}},
+        keyHighlight={LangGraph, MCP, SQL, MongoDB}
+    ]
+    \begin{itemize}
+        \item Unified natural language interface for SQL, NoSQL, and Drive-based queries.
+        \item Features layered agent system: Planner, Executor, and Error Handler.
+        \item Supports schema-aware, context-sensitive query generation.
+    \end{itemize}
+
+    \projectItem[
+        title={Sector Rotation Graph},
+        duration={\href{https://github.com/yswa-var/RRG}{[LINK]}},
+        keyHighlight={Open-source Bloomberg RRG clone}
+    ]
+    \begin{itemize}
+        \item Visualized sector performance using Yahoo Finance data.
+        \item Streamlit-based GUI with benchmarking against indices.
+    \end{itemize}
+
+    \projectItem[
+        title={FilthyFilter},
+        duration={\href{https://github.com/yswa-var/FilthyFilter}{[LINK]}},
+        keyHighlight={OpenCV, Tesseract OCR, Computer Vision}
+    ]
+    \begin{itemize}
+        \item Extracts high-quality wallpapers from anime movies using multi-metric visual analysis.
+        \item Prioritizes frames based on sharpness, color vibrancy, composition, and character detection.
+        \item Filters out frames with text overlays using OCR; supports full customization and automation.
+    \end{itemize}
+
+\end{experienceSection}
+
+
+\begin{skillsSection}{Technical Skills}
+    \skillItem[
+        category={Tools \& Frameworks},
+        skills={REST API, PyTorch, LangGraph, LangChain, RAG, Vector DBs, MCP}
+    ] \\
+    \skillItem[
+        category={Platforms},
+        skills={Pine Script, GitHub, DB Ops, AWS}
+    ] \\
+    \skillItem[
+        category={Languages},
+        skills={Python, Golang (learning), SQL, Bash}
+    ] \\
+    \skillItem[
+        category={Domains},
+        skills={AI Agents, Financial Systems, Automation}
+    ] \\
+    \skillItem[
+        category={Soft Skills},
+        skills={Analytical Thinking, Design Thinking, Planning}
+    ]
+\end{skillsSection}
+
+\begin{educationSection}{Education}
+    \educationItem[
+        university={KIIT University, Bhubaneswar, IN},
+        college={School of Computer Science},
+        graduation={Sep 2020 – Sep 2024},
+        grade={8.30 CGPA},
+        program={B.Tech in Computer Science Engineering},
+        coursework={Financial Economics using Data Analytics}
+    ]
+\end{educationSection}
+
+\begin{experienceSection}{Achievements}
+    \begin{itemize}
+        \item Contributed to Flowise Python connectors (AI agent infra).
+        \item Blog: “Nadaraya-Watson Indicator” \href{https://medium.com/@yashaswa/backtesting-the-viral-nadaraya-watson-envelop-trading-indicator-in-python-b800a70e8167}{[12.5K+ views]}.
+        \item Speaker: UN Workshop on Power BI.
+        \item ArtStation: \textit{Utopia Concept Art Winner}, Spring 2020.
+    \end{itemize}
+\end{experienceSection}
+
+\begin{experienceSection}{Interests}
+    Blogging (Finance, AI), Himalayan trekking (3 peaks), swimming, and hiking.
+\end{experienceSection}
+
+\end{document}

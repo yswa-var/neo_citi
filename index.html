@@ -3,79 +3,116 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Web Site of ImaJumanji</title>
+  <title>Yashaswa Varshney - Digital Portfolio</title>
   <link href="/style.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body class="crt">
   <div class="container">
     <header>
-      <h1 class="site-title">IMAJUMANJI.exe</h1>
+      <div class="window-controls">
+        <span class="window-title">YASHASWA.exe</span>
+        <div class="window-buttons">
+          <span class="minimize">_</span>
+          <span class="maximize">□</span>
+          <span class="close">×</span>
+        </div>
+      </div>
       <nav class="nav-menu">
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#notes" class="nav-link">Notes</a>
         <a href="#about" class="nav-link">About</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#blogs" class="nav-link">Blogs</a>
+        <a href="#projects" class="nav-link">Projects</a>
       </nav>
     </header>
 
     <main>
-      <section id="projects" class="content-section">
-        <h2 class="section-title">> Projects</h2>
-        <div class="project-grid">
-          <article class="project-card">
-            <h3>Project Alpha</h3>
-            <p>A cyberpunk-themed project that explores the boundaries of digital reality.</p>
-          </article>
-          <article class="project-card">
-            <h3>Neo Tokyo</h3>
-            <p>An interactive web experience inspired by classic anime aesthetics.</p>
-          </article>
-          <article class="project-card">
-            <h3>Digital Dreams</h3>
-            <p>Exploring the intersection of technology and human consciousness.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="notes" class="content-section">
-        <h2 class="section-title">> Digital Notes</h2>
-        <div class="project-grid">
-          <article class="project-card">
-            <h3>Thoughts on AI</h3>
-            <p>Exploring the future of artificial intelligence and its impact on society.</p>
-          </article>
-          <article class="project-card">
-            <h3>Web Development</h3>
-            <p>Notes on modern web technologies and retro design principles.</p>
-          </article>
-        </div>
-      </section>
-
       <section id="about" class="content-section">
-        <h2 class="section-title">> About Me</h2>
-        <p>Digital wanderer exploring the intersection of technology and creativity. Building things that make the digital world a more interesting place.</p>
-      </section>
-
-      <section id="contact" class="content-section">
-        <h2 class="section-title">> Contact</h2>
-        <p>Feel free to reach out through the digital void:</p>
+        <h2 class="section-title" data-text="Digital Profile">Digital Profile</h2>
         <div class="project-grid">
           <article class="project-card">
-            <h3>Email</h3>
-            <p>contact@imajumanji.dev</p>
+            <div class="card-header">
+              <h3>About Me</h3>
+              <span class="card-icon">👨‍💻</span>
+            </div>
+            <p>Software Engineer passionate about AI, Finance, and Building Digital Systems</p>
+            <p>B.Tech in Computer Science Engineering from KIIT University</p>
           </article>
           <article class="project-card">
-            <h3>GitHub</h3>
-            <p>github.com/imajumanji</p>
+            <div class="card-header">
+              <h3>Skills</h3>
+              <span class="card-icon">🛠️</span>
+            </div>
+            <p>Python • Golang • SQL • REST API • PyTorch • LangGraph • LangChain • RAG • Vector DBs • MCP</p>
           </article>
+          <article class="project-card">
+            <div class="card-header">
+              <h3>Connect</h3>
+              <span class="card-icon">📧</span>
+            </div>
+            <p>Email: yswa.var@icloud.com</p>
+            <p>LinkedIn: linkedin.com/in/yashaswa-varshney</p>
+            <p>GitHub: github.com/yswa-var</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="blogs" class="content-section">
+        <h2 class="section-title" data-text="Digital Thoughts">Digital Thoughts</h2>
+        <div id="blogs-container" class="project-grid">
+          <!-- Blogs will be loaded dynamically -->
+          <div class="loading">Loading blogs...</div>
+        </div>
+      </section>
+
+      <section id="projects" class="content-section">
+        <h2 class="section-title" data-text="Digital Creations">Digital Creations</h2>
+        <div id="projects-container" class="project-grid">
+          <!-- Projects will be loaded dynamically -->
+          <div class="loading">Loading projects...</div>
         </div>
       </section>
     </main>
 
-    <footer class="content-section">
-      <p>© 2024 ImaJumanji | Built with cyberpunk vibes</p>
+    <footer>
+      <p>© 2024 Yashaswa Varshney | Built with Windows 95 vibes and vaporwave aesthetics</p>
     </footer>
   </div>
+
+  <script>
+    // Function to load content from a directory
+    async function loadContent(type) {
+      const container = document.getElementById(`${type}-container`);
+      try {
+        const response = await fetch(`/${type}/index.json`);
+        const data = await response.json();
+        
+        container.innerHTML = ''; // Clear loading message
+        
+        data.forEach(item => {
+          const card = document.createElement('article');
+          card.className = 'project-card';
+          card.innerHTML = `
+            <div class="card-header">
+              <h3>${item.title}</h3>
+              <span class="card-icon">${item.icon || '📄'}</span>
+            </div>
+            <p class="tech-stack">${item.date || ''}</p>
+            <p>${item.description}</p>
+            <a href="/${type}/${item.filename}" class="nav-link">[Read More]</a>
+          `;
+          container.appendChild(card);
+        });
+      } catch (error) {
+        container.innerHTML = `<div class="error">Failed to load ${type}. Please try again later.</div>`;
+        console.error(`Error loading ${type}:`, error);
+      }
+    }
+
+    // Load content when the page loads
+    document.addEventListener('DOMContentLoaded', () => {
+      loadContent('blogs');
+      loadContent('projects');
+    });
+  </script>
 </body>
 </html>
 
