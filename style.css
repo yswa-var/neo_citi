@@ -8,12 +8,12 @@
   --xp-window: #ece9d8;
   --xp-border: #0054e3;
   --xp-shadow: #7ba7d9;
-  --xp-text: #000000;
+  --xp-text: #000;
   --xp-gray: #d4d0c8;
   --xp-button: #ece9d8;
   --xp-button-hover: #316ac5;
-  --xp-button-text: #000000;
-  --xp-button-hover-text: #ffffff;
+  --xp-button-text: #000;
+  --xp-button-hover-text: #fff;
 }
 
 * {
@@ -40,7 +40,7 @@ body {
   background: var(--xp-window);
   border: 1px solid var(--xp-border);
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgb(0 0 0 / 20%);
 }
 
 header {
@@ -118,7 +118,7 @@ header {
 }
 
 .project-card:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
 }
 
 .card-header {
@@ -261,12 +261,12 @@ footer {
   font-family: 'Segoe UI', sans-serif;
   font-size: 1.2rem;
   border: 1px solid #e81123;
-  background: rgba(232, 17, 35, 0.1);
+  background: rgb(232 17 35 / 10%);
   border-radius: 4px;
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .site-title {
     font-size: 1.2rem;
   }
